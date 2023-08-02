@@ -30,6 +30,7 @@
 }
 
 .postTitle{
+  text-decoration: none;
   font-family:'Josefin Sans',Verdana, Geneva, Tahoma, sans-serif;
   font-size: 24px;
   font-weight: 700;
