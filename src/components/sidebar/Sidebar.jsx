@@ -5,11 +5,15 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import { useEffect,useState } from "react";
+import { useContext, useEffect,useState } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
 
 const Sidebar = () => {
+  const {user,dispatch} =useContext(Context);
+  const PF ="http://localhost:4500/api/images/";
+
 
   const [cats, setCats] = useState([]);
 
@@ -25,8 +29,8 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebarItem">
         <div className="sidebarTitle">ABOUT ME</div>
-        <img src={ProfileImg} alt="ProfileImg" />
-        <p>Loream asdkjjsgnia v.sngad nasjknfiha dafm,dsgadhawjhjhaefjhagmejafukmagsd</p>
+        <img src={PF+user.profilePicture} alt="ProfileImg" />
+        <p>Explore, Cook, and Share Your Culinary Creations with Our Community!</p>
       </div>
       <div className="sidebarItem">
         <div className="sidebarTitle">Categories</div>
